@@ -16,7 +16,7 @@
 # Also: two identical words may be considered to be an edge case of an anagram, but for this kata they are still correct anagrams.
 
 def isAnagram(test, original)
-  str1 = test.split("").map{|x| x.ord}.inject(:+)
-  str2 = original.split("").map{|x| x.ord}.inject(:+)
+  str1 = test.split("").map{ |x| x.ord}.inject(:+)
+  str2 = original.split("").map{ |x| x.ord}.inject(:+)
   str1 == str2
 end
