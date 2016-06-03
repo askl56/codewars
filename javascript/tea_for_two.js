@@ -1,3 +1,5 @@
+var assert = require('assert');
+
 /*
 
 Description
@@ -14,12 +16,12 @@ tea42('2u2u') //should return 'tutu'
 */
 
 function tea42(input) {
-  var inputArray = input.toString().split('');
-  inputArray.forEach(function(v, i, a) {
-    if(v === '2') {
-      a[i] = 't';
-    }
-  });
-
-  return inputArray.join('');
+  return input.toString().replace(/2/g, 't');
 };
+
+assert.equal(tea42('coffee'), 'coffee');
+assert.equal(tea42('tea'), 'tea');
+assert.equal(tea42('2ea'), 'tea');
+assert.equal(tea42(9022), '90tt');
+assert.equal(tea42(5676765), '5676765');
+assert.equal(tea42('2u2u'), 'tutu');
